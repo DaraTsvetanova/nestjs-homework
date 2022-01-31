@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
+import { Country } from './country.entity';
 
 @Entity()
 export class User {
@@ -14,6 +21,7 @@ export class User {
   @Column()
   country: string;
 
-  @Column()
-  countries: string;
+  @ManyToMany(() => Country)
+  @JoinTable()
+  countries: Country[];
 }
