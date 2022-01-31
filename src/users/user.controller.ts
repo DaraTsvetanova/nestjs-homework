@@ -10,13 +10,14 @@ export class UserController {
     return 'Hello';
   }
 
-  @Post()
-  insertUser(
+  @Post('/')
+  createUser(
     @Body('name') name: string,
     @Body('email') email: string,
     @Body('password') password: string,
     @Body('country') country: string,
   ) {
+    console.log('------------------ ');
     return this.userService.createUser(name, email, password, country);
   }
 }
