@@ -5,7 +5,7 @@ import {
   ManyToMany,
   JoinTable,
 } from 'typeorm';
-import { Country } from './country.entity';
+import { Country } from '../countries/country.entity';
 
 @Entity()
 export class User {
